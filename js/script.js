@@ -269,6 +269,9 @@ function setRewards() {
         document.getElementById('reward-img').src = talentDailyRewardImg[slideNumber];
     }
 }
+setInterval(() => {
+    onRightClick()
+}, 2000);
 
 function onLeftClick() {
     if (slideNumber > 0) {
@@ -276,12 +279,22 @@ function onLeftClick() {
         document.getElementById('slide-number').innerHTML = rank[slideNumber];
         setRewards();
     }
+    else if (slideNumber == 0) {
+        slideNumber = 2;
+        document.getElementById('slide-number').innerHTML = rank[2];
+        setRewards();
+    }
 }
 
 function onRightClick() {
-    if (slideNumber < 2) {
+    if (slideNumber < 3) {
         slideNumber = slideNumber + 1;
         document.getElementById('slide-number').innerHTML = rank[slideNumber];
+        setRewards();
+    }
+    if (slideNumber == 3) {
+        slideNumber = 0;
+        document.getElementById('slide-number').innerHTML = rank[0];
         setRewards();
     }
 }

@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RoyalStrikers</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/script.js" defer></script>
+</head>
+
+<body>
+    <div id="modal" class="modal">
+        <div class="guidline">
+            <div class="close close-btn">
+                <button onclick={hideGuidline()}>
+                    <img src="./img/close.png" alt="car" style="width: 10vw;" />
+                </button>
+            </div>
+            <div class="giuidline-bg">
+                <div class="gift-title">
+                    <img src="./img/howTorib.png" alt="gift title" width="100%">
+                </div>
+                <div class="rules">
+                    <div class="game-reward-title">Game Rewards</div>
+                    <table id="score-beans-table">
+                        <tbody>
+                            <tr>
+                                <th>Score</th>
+                                <th>Beans</th>
+                            </tr>
+                            <tr>
+                                <td>6-20</td>
+                                <td><img src="./img/coin.png" alt="" style="width: 3vw;">250</td>
+                            </tr>
+                            <tr>
+                                <td>21-25</td>
+                                <td><img src="./img/coin.png" alt="" style="width: 3vw;">500</td>
+                            </tr>
+                            <tr>
+                                <td>26-30</td>
+                                <td><img src="./img/coin.png" alt="" style="width: 3vw;">1000</td>
+                            </tr>
+                            <tr>
+                                <td>31-36</td>
+                                <td><img src="./img/coin.png" alt="" style="width: 3vw;">1500</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                    <ul>
+                        <li>To start playing, send event gifts to your favorite streamers.
+                        </li>
+                        <li>To play one over <b>(06 balls)</b>, spend 50k beans on event gifts.(1 over = 50k beans)</li>
+                        <li>There will be 5 min Official Pk match will be scheduled, talents need to come live before 15
+                            min of the PK Battle.</li>
+                        <li>Click on the Play button to score maximum runs.</li>
+                        <li>According to runs scored, you will receive beans as reward.</li>
+                        <li>Gather maximum overs by sending event gifts to play x20 and x50 overs at once and collect
+                            scores altogether.</li>
+                        <li>Users scoring maximum runs will be ranked on the Master Blaster leaderboard & Users sending
+                            maximum event gifts will be ranked on the Cricket Masters leaderboard.</li>
+                        <li>The maximum spender will be the winner of the tournament.Beans spent on event gifts will be
+                            collected in the gems pot and will be sent as rewards to top 5 talents of daily ranking.
+                            Gems pot will reset to 0 after distribution.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="main">
+        <!-- header -->
+        <div class="header">
+            <img src="./img/header.png" alt="header" width="100%">
+        </div>
+
+        <!-- timer -->
+        <div class="timer">
+            <div>
+                <div class="days">00</div>Days
+            </div>
+            <div>
+                <div class="hr">00</div>Hr
+            </div>
+            <div>
+                <div class="min">00</div>Min
+            </div>
+            <div>
+                <div class="sec">00</div>Sec
+            </div>
+        </div>
+
+        <!-- game banner -->
+        <!-- user talent tab for game banner -->
+        <div class="user-talent-tab" style="margin-top: 10vw;">
+            <div class="user-talent">
+                <button class="user" id="game-user-mode" onclick="setUserMode('game')">
+                    User
+                </button>
+                <div></div>
+                <button class="talent unselected-mode" id="game-talent-mode" onclick="setTalentMode('game')">
+                    Talent
+                </button>
+            </div>
+        </div>
+        <div id="user-game">
+            <!-- game section -->
+            <div class="game">
+                <div class="mainimg">
+                    <img src="./img/main.png" alt="" width="100%">
+                </div>
+                <div class="gamebgimg">
+                    <img src="./img/gameBg.png" alt="" width="100%">
+                    <div class="playBtn">
+                        <img src="./img/play.png" alt="" width="100%">
+                    </div>
+                </div>
+                <div class="column3">
+                    <div class="col1 active">
+                        <button>1</button>
+                    </div>
+                    <div class="col2">
+                        <button>20</button>
+                    </div>
+                    <div class="col3">
+                        <button>50</button>
+                    </div>
+                </div>
+                <div class="chance-icon"><img src="./img/chanceIcon.png" alt="" width="100%"></div>
+                <div class="column2">
+                    <div class="total-chance">
+                        My Chances: 00
+                    </div>
+                    <div class="total-runs">
+                        My Total Runs: 00
+                    </div>
+                </div>
+            </div><br />
+        </div>
+        <div id="talent-game">
+            <div class="game">
+                <div>
+                    <div class="games-pot">
+                        <br /><br />
+                        <img src="./img/gems-pot.png" alt="" width="100%">
+                    </div>
+                    <div class="gems-pot-info">
+                        <img src="./img/gem-pot-info.png" width="100%">
+                        <div id="gems">000,000.00</div>
+                    </div>
+                    <div class="gems-description">On each day at the end, this gems pot rewards will be sent to top 5
+                        talents of daily ranking leaderboard.</div>
+                </div>
+            </div><br />
+        </div>
+
+        <!-- gift banner -->
+        <div class="game gift">
+            <div class="gift-title">
+                <img src="./img/giftEvent.png" alt="gift title" width="100%">
+            </div>
+            <div class="column4">
+                <div class="gift-col1">
+                    <img src="./img/gift1.png" alt="gift1" width="100%">
+                    <div>Aatish Baazi</div>
+                    <div>20K <img src="./img/coin.png" alt="coin" style="width: 3vw;"> </div>
+                </div>
+                <div class="gift-col2">
+                    <img src="./img/gift2.png" alt="gift2" width="100%">
+                    <div>Loot Chest</div>
+                    <div>1K <img src="./img/coin.png" alt="coin" style="width: 3vw;"> </div>
+                </div>
+                <div class="gift-col3">
+                    <img src="./img/gift4.png" alt="gift4" width="100%">
+                    <div>Warrior</div>
+                    <div>50K <img src="./img/coin.png" alt="coin" style="width: 3vw;"> </div>
+                </div>
+                <div class="gift-col4">
+                    <img src="./img/gift3.png" alt="gift3" width="100%">
+                    <div>Sk Billionaire</div>
+                    <div>200K <img src="./img/coin.png" alt="coin" style="width: 3vw;"> </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- how to play info -->
+        <div class="how-to-play">
+            <button onclick={showGuidline()}>
+                <img src="./img/howTo.png" alt="how to play" width="100%">
+            </button>
+        </div>
+
+        <!-- reward banner -->
+        <!-- user talent tab for reward -->
+        <div class="user-talent-tab" style="margin-top: 0;">
+            <div class="user-talent">
+                <button class="user" id="reward-user-mode" onclick="setUserMode('reward')">
+                    User
+                </button>
+                <div></div>
+                <button class="talent unselected-mode" id="reward-talent-mode" onclick="setTalentMode('reward')">
+                    Talent
+                </button>
+            </div>
+        </div>
+        <div class="game reward">
+            <div class="gift-title">
+                <img src="./img/rewards.png" alt="gift title" width="100%">
+            </div>
+            <div id="user-reward">
+                <div class="talent-reward-tab">
+                    <div id="reward-master-blaster" class="selected-tab"><button
+                            onclick="setMasterBlaster('reward')">Master Blaster</button></div>
+                    <div id="reward-cricket-master" class="unselected-tab unselected-tab-right-side"><button
+                            onclick="setCricketMaster('reward')">Cricket Master</button></div>
+                </div>
+            </div>
+            <div id="talent-reward">
+                <div class="user-reward-tab">
+                    <div id="overall-reward" class="selected-tab"><button
+                            onclick="setOverallReward('reward')">Overall</button></div>
+                    <div id="daily-reward" class="unselected-tab unselected-tab-right-side"><button
+                            onclick="setDailyReward('reward')">Daily</button></div>
+                </div>
+            </div>
+            <div id="slide-number">1st</div>
+            <div class="rewards">
+                <div>
+                    <button onclick="onLeftClick()"> <img src="./img/lArrow.png" alt="" width="100%"> </button>
+                </div>
+                <div style=" margin: 0 15vw 0;">
+                    <img src="./img/Master-blaster-gold-profile-frame.png" alt="" width="100%" id="reward-img">
+                </div>
+                <div>
+                    <button onclick="onRightClick()"> <img src="./img/rArrow.png" alt="" width="100%"> </button>
+                </div>
+            </div>
+            <div id="reward-description">
+                15*Days Master Blaster Gold Profile Frame (Golden)
+            </div>
+        </div>
+
+        <!-- user talent tab for leaderboard-->
+        <div class="user-talent-tab" style="margin-top: 0;">
+            <div class="user-talent">
+                <button class="user" id="leaderboard-user-mode" onclick="setUserMode('leaderboard')">
+                    User
+                </button>
+                <div></div>
+                <button class="talent unselected-mode" id="leaderboard-talent-mode"
+                    onclick="setTalentMode('leaderboard')">
+                    Talent
+                </button>
+            </div>
+        </div>
+        <div class="leaderboard">
+            <div id="user-leaderboard">
+                <div class="user-leaderboard-tab">
+                    <div id="leaderboard-master-blaster" class="selected-tab"><button
+                            onclick="setMasterBlaster('leaderboard')">Master Blaster</button></div>
+                    <div id="leaderboard-cricket-master" class="unselected-tab unselected-tab-right-side"><button
+                            onclick="setCricketMaster('leaderboard')">Cricket Master</button></div>
+                </div>
+            </div>
+            <div id="talent-leaderboard">
+                <div class="talent-leaderboard-tab">
+                    <div id="overall-leaderboard" class="selected-tab"><button
+                            onclick="setOverallReward('leaderboard')">Overall</button></div>
+                    <div id="daily-leaderboard" class="unselected-tab unselected-tab-right-side"><button
+                            onclick="setDailyReward('leaderboard')">Daily</button></div>
+                </div>
+            </div>
+            <div id="user-winner">
+                <div id="master-user-winner">
+                    <div class="top3winner">
+                        <div class="top2">
+                            <img src="./img/2ndP.png" alt="" style="width:28vw;">
+                            <img src="http://kkimg.kktv9.com/image/555000004_0_1587365474177.jpg!128" alt=""
+                                class="winner-img">
+                            <div>master-user-test03图录取我哦我一句剧透我一句路 </div>
+                            <div> <img src="./img/coin.png" alt="" style="width: 3vw;"> 940,858</div>
+                            <img src="http://www.streamkar.tv/streamkar/common/img/ulv/13.png" style="width: 10vw;">
+                        </div>
+                        <div class="top1">
+                            <img src="./img/1stPn.png" alt="" style="width: 32vw;">
+                            <img src="http://kkimg.kktv9.com/image/555000004_0_1587365474177.jpg!128" alt=""
+                                class="winner-img" style="width: 17vw;">
+                            <div>indo's Flag User ranking </div>
+                            <div> <img src="./img/coin.png" alt="" style="width: 3vw;"> 1,001,150</div>
+                            <img src="http://www.streamkar.tv/streamkar/common/img/ulv/17.png" style="width: 10vw;">
+                        </div>
+                        <div class="top3">
+                            <img src="./img/3rdP.png" alt="" style="width: 28vw;">
+                            <img src="http://kkimg.kktv9.com/image/555000004_0_1587365474177.jpg!128" alt=""
+                                class="winner-img">
+                            <div>test04图录取我哦我一句剧透我一句路 </div>
+                            <div> <img src="./img/coin.png" alt="" style="width: 3vw;"> 940,858</div>
+                            <img src="http://www.streamkar.tv/streamkar/common/img/ulv/13.png" style="width: 10vw;">
+                        </div>
+                    </div>
+                    <div>
+                        <div class="leaderboard-strip top-leaderboard-strip">
+                            <div class="profile-img">
+                                <img src="http://kkimg.kktv9.com/image/555000004_0_1587365474177.jpg!128" alt=""
+                                    width="100%">
+                            </div>
+                            <div>
+                                Name:
+                                <br />
+                                Id:00000000
+                            </div>
+                            <div class="last-col">
+                                <div style="padding: 3vw;">Run Scored</div>
+                            </div>
+                        </div>
+                        <div class="leaderboard-strip">
+                            <div class="profile-img">
+                                <img src="http://kkimg.kktv9.com/image/555000004_0_1587365474177.jpg!128" alt=""
+                                    width="100%">
+                            </div>
+                            <div>
+                                Name:
+                                <br />
+                                Id:00000000
+                            </div>
+                            <div class="last-col">
+                                <div style="padding: 3vw;">Run Scored</div>
+                            </div>
+                        </div>
+                        <div class="leaderboard-strip">
+                            <div class="profile-img">
+                                <img src="http://kkimg.kktv9.com/image/555000004_0_1587365474177.jpg!128" alt=""
+                                    width="100%">
+                            </div>
+                            <div>
+                                Name:
+                                <br />
+                                Id:00000000
+                            </div>
+                            <div class="last-col">
+                                <div style="padding: 3vw;">Run Scored</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="cricket-user-winner">
+                    <div class="top3winner">
+                        <div class="top2">
+                            <img src="./img/2ndP.png" alt="" style="width:28vw;">
+                            <img src="http://kkimg.kktv9.com/image/555000004_0_1587365474177.jpg!128" alt=""
+                                class="winner-img">
+                            <div>cricket-user-test03图录取我哦我一句剧透我一句路 </div>
+                            <div> <img src="./img/coin.png" alt="" style="width: 3vw;"> 940,858</div>
+                            <img src="http://www.streamkar.tv/streamkar/common/img/ulv/13.png" style="width: 10vw;">
+                        </div>
+                        <div class="top1">
+                            <img src="./img/1stPn.png" alt="" style="width: 32vw;">
+                            <img src="http://kkimg.kktv9.com/image/555000004_0_1587365474177.jpg!128" alt=""
+                                class="winner-img" style="width: 17vw;">
+                            <div>indo's Flag User ranking </div>
+                            <div> <img src="./img/coin.png" alt="" style="width: 3vw;"> 1,001,150</div>
+                            <img src="http://www.streamkar.tv/streamkar/common/img/ulv/17.png" style="width: 10vw;">
+                        </div>
+                        <div class="top3">
+                            <img src="./img/3rdP.png" alt="" style="width: 28vw;">
+                            <img src="http://kkimg.kktv9.com/image/555000004_0_1587365474177.jpg!128" alt=""
+                                class="winner-img">
+                            <div>test04图录取我哦我一句剧透我一句路 </div>
+                            <div> <img src="./img/coin.png" alt="" style="width: 3vw;"> 940,858</div>
+                            <img src="http://www.streamkar.tv/streamkar/common/img/ulv/13.png" style="width: 10vw;">
+                        </div>
+                    </div>
+                    <div>
+                        <div class="leaderboard-strip top-leaderboard-strip">
+                            <div class="profile-img">
+                                <img src="http://kkimg.kktv9.com/image/555000004_0_1587365474177.jpg!128" alt=""
+                                    width="100%">
+                            </div>
+                            <div>
+                                Name:
+                                <br />
+                                Id:00000000
+                            </div>
+                            <div class="last-col">
+                                <div style="padding: 3vw;">Run Scored</div>
+                            </div>
+                        </div>
+                        <div class="leaderboard-strip">
+                            <div class="profile-img">
+                                <img src="http://kkimg.kktv9.com/image/555000004_0_1587365474177.jpg!128" alt=""
+                                    width="100%">
+                            </div>
+                            <div>
+                                Name:
+                                <br />
+                                Id:00000000
+                            </div>
+                            <div class="last-col">
+                                <div style="padding: 3vw;">Run Scored</div>
+                            </div>
+                        </div>
+                        <div class="leaderboard-strip">
+                            <div class="profile-img">
+                                <img src="http://kkimg.kktv9.com/image/555000004_0_1587365474177.jpg!128" alt=""
+                                    width="100%">
+                            </div>
+                            <div>
+                                Name:
+                                <br />
+                                Id:00000000
+                            </div>
+                            <div class="last-col">
+                                <div style="padding: 3vw;">Run Scored</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="talent-winner">
+                <div id="overall-talent-winner">
+                    <div class="top3winner">
+                        <div class="top2">
+                            <img src="./img/2ndP.png" alt="" style="width:28vw;">
+                            <img src="http://kkimg.kktv9.com/image/555000004_0_1587365474177.jpg!128" alt=""
+                                class="winner-img">
+                            <div>overall-talent-test03图录取我哦我一句剧透我一句路 </div>
+                            <div> <img src="./img/coin.png" alt="" style="width: 3vw;"> 940,858</div>
+                            <img src="http://www.streamkar.tv/streamkar/common/img/ulv/13.png" style="width: 10vw;">
+                        </div>
+                        <div class="top1">
+                            <img src="./img/1stPn.png" alt="" style="width: 32vw;">
+                            <img src="http://kkimg.kktv9.com/image/555000004_0_1587365474177.jpg!128" alt=""
+                                class="winner-img" style="width: 17vw;">
+                            <div>indo's Flag User ranking </div>
+                            <div> <img src="./img/coin.png" alt="" style="width: 3vw;"> 1,001,150</div>
+                            <img src="http://www.streamkar.tv/streamkar/common/img/ulv/17.png" style="width: 10vw;">
+                        </div>
+                        <div class="top3">
+                            <img src="./img/3rdP.png" alt="" style="width: 28vw;">
+                            <img src="http://kkimg.kktv9.com/image/555000004_0_1587365474177.jpg!128" alt=""
+                                class="winner-img">
+                            <div>test04图录取我哦我一句剧透我一句路 </div>
+                            <div> <img src="./img/coin.png" alt="" style="width: 3vw;"> 940,858</div>
+                            <img src="http://www.streamkar.tv/streamkar/common/img/ulv/13.png" style="width: 10vw;">
+                        </div>
+                    </div>
+                    <div>
+                        <div class="leaderboard-strip top-leaderboard-strip">
+                            <div class="profile-img">
+                                <img src="http://kkimg.kktv9.com/image/555000004_0_1587365474177.jpg!128" alt=""
+                                    width="100%">
+                            </div>
+                            <div>
+                                Name:
+                                <br />
+                                Id:00000000
+                            </div>
+                            <div class="last-col">
+                                <div style="padding: 3vw;">Run Scored</div>
+                            </div>
+                        </div>
+                        <div class="leaderboard-strip">
+                            <div class="profile-img">
+                                <img src="http://kkimg.kktv9.com/image/555000004_0_1587365474177.jpg!128" alt=""
+                                    width="100%">
+                            </div>
+                            <div>
+                                Name:
+                                <br />
+                                Id:00000000
+                            </div>
+                            <div class="last-col">
+                                <div style="padding: 3vw;">Run Scored</div>
+                            </div>
+                        </div>
+                        <div class="leaderboard-strip">
+                            <div class="profile-img">
+                                <img src="http://kkimg.kktv9.com/image/555000004_0_1587365474177.jpg!128" alt=""
+                                    width="100%">
+                            </div>
+                            <div>
+                                Name:
+                                <br />
+                                Id:00000000
+                            </div>
+                            <div class="last-col">
+                                <div style="padding: 3vw;">Run Scored</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="daily-talent-winner">
+                    <div class="top3winner">
+                        <div class="top2">
+                            <img src="./img/2ndP.png" alt="" style="width:28vw;">
+                            <img src="http://kkimg.kktv9.com/image/555000004_0_1587365474177.jpg!128" alt=""
+                                class="winner-img">
+                            <div>daily-talent-test03图录取我哦我一句剧透我一句路 </div>
+                            <div> <img src="./img/coin.png" alt="" style="width: 3vw;"> 940,858</div>
+                            <img src="http://www.streamkar.tv/streamkar/common/img/ulv/13.png" style="width: 10vw;">
+                        </div>
+                        <div class="top1">
+                            <img src="./img/1stPn.png" alt="" style="width: 32vw;">
+                            <img src="http://kkimg.kktv9.com/image/555000004_0_1587365474177.jpg!128" alt=""
+                                class="winner-img" style="width: 17vw;">
+                            <div>indo's Flag User ranking </div>
+                            <div> <img src="./img/coin.png" alt="" style="width: 3vw;"> 1,001,150</div>
+                            <img src="http://www.streamkar.tv/streamkar/common/img/ulv/17.png" style="width: 10vw;">
+                        </div>
+                        <div class="top3">
+                            <img src="./img/3rdP.png" alt="" style="width: 28vw;">
+                            <img src="http://kkimg.kktv9.com/image/555000004_0_1587365474177.jpg!128" alt=""
+                                class="winner-img">
+                            <div>test04图录取我哦我一句剧透我一句路 </div>
+                            <div> <img src="./img/coin.png" alt="" style="width: 3vw;"> 940,858</div>
+                            <img src="http://www.streamkar.tv/streamkar/common/img/ulv/13.png" style="width: 10vw;">
+                        </div>
+                    </div>
+                    <div>
+                        <div class="leaderboard-strip top-leaderboard-strip">
+                            <div class="profile-img">
+                                <img src="http://kkimg.kktv9.com/image/555000004_0_1587365474177.jpg!128" alt=""
+                                    width="100%">
+                            </div>
+                            <div>
+                                Name:
+                                <br />
+                                Id:00000000
+                            </div>
+                            <div class="last-col">
+                                <div style="padding: 3vw;">Run Scored</div>
+                            </div>
+                        </div>
+                        <div class="leaderboard-strip">
+                            <div class="profile-img">
+                                <img src="http://kkimg.kktv9.com/image/555000004_0_1587365474177.jpg!128" alt=""
+                                    width="100%">
+                            </div>
+                            <div>
+                                Name:
+                                <br />
+                                Id:00000000
+                            </div>
+                            <div class="last-col">
+                                <div style="padding: 3vw;">Run Scored</div>
+                            </div>
+                        </div>
+                        <div class="leaderboard-strip">
+                            <div class="profile-img">
+                                <img src="http://kkimg.kktv9.com/image/555000004_0_1587365474177.jpg!128" alt=""
+                                    width="100%">
+                            </div>
+                            <div>
+                                Name:
+                                <br />
+                                Id:00000000
+                            </div>
+                            <div class="last-col">
+                                <div style="padding: 3vw;">Run Scored</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="more-btn">
+            <img src="./img/More-btn.png" alt="" width="100%">
+        </div>
+
+        <!-- footer -->
+        <div class="footer">All rights Reserved by StreamKar</div>
+    </div>
+</body>
+
+</html>

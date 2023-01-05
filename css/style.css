@@ -1,0 +1,505 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-image: url(../img/bg.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.header {
+    width: 100vw;
+}
+
+.guidline {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.close {
+    position: relative;
+    width: 100vw;
+    left: 80vw;
+    padding: 5vw;
+}
+
+.main {
+    opacity: 0.2;
+    height: 100vh;
+    position: relative;
+    top: 0;
+    overflow: hidden;
+}
+
+.giuidline-bg {
+    background-image: url(../img/dialogBg.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    color: white;
+    font-size: 4vw;
+    height: 80vh;
+    position: relative;
+    width: 95vw;
+    margin: 0 auto;
+}
+
+.rules {
+    width: 80vw;
+    text-align: justify;
+    font-size: 5vw;
+    height: 70vh;
+    overflow: scroll;
+    margin: 0 auto;
+}
+
+#score-beans-table {
+    border-collapse: collapse;
+    width: 50vw;
+    margin: 0 auto;
+    font-weight: bold;
+    text-align: center;
+}
+
+#score-beans-table td,
+#score-beans-table th {
+    border: 1px solid #145b11;
+}
+
+#score-beans-table tr:nth-child(even) {
+    background-color: #eee;
+    color: #145b11;
+}
+
+#score-beans-table tr:nth-child(odd) {
+    background-color: #145b11;
+}
+
+#score-beans-table th {
+    text-align: left;
+    background-color: #145b11;
+    color: white;
+    text-align: center;
+}
+
+.game-reward-title {
+    text-align: center;
+    font-size: 5vw;
+    margin-bottom: 2vw;
+    font-weight: bold;
+    color: white;
+    text-decoration: underline;
+}
+
+.games-pot {
+    width: 80vw;
+    margin: 0 auto;
+}
+
+.gems-pot-info {
+    width: 60vw;
+    margin: 0 auto;
+    margin-top: -15vw;
+}
+
+#gems {
+    color: white;
+    font-weight: bold;
+    font-size: 6vw;
+    text-align: center;
+    margin-top: -15vw;
+    margin-left: 10vw;
+}
+
+.gems-description {
+    color: white;
+    width: 90vw;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 10vw;
+    font-size: 5vw;
+}
+
+.timer {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    width: 60vw;
+    color: white;
+    justify-items: center;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 6vw;
+    font-weight: bold;
+}
+
+.days,
+.hr,
+.sec,
+.min {
+    background-image: url(../img/timer.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    padding: 2vw 3vw 3vw;
+}
+
+.user-talent-tab {
+    background-image: url(../img/User-talent-btn-bg.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    margin-top: 10vw;
+}
+
+.user-talent {
+    display: grid;
+    grid-template-columns: 40% 20% 40%;
+    width: 85vw;
+    margin: 0 auto;
+    padding: 2vw 0;
+}
+
+.user {
+    background-image: url(../img/userBtn.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.talent {
+    background-image: url(../img/telBtn.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.unselected-mode {
+    filter: grayscale(1);
+}
+
+.user,
+.talent {
+    font-size: 7vw;
+    padding: 3vw;
+    color: white;
+    font-weight: bold;
+}
+
+button {
+    border: none;
+    background: transparent;
+}
+
+.game {
+    background-image: url(../img/game-bg.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    padding-bottom: 5vw;
+}
+
+.mainimg {
+    padding: 10vw 5vw 5vw;
+}
+
+.gamebgimg {
+    position: relative;
+    margin: -70vw auto 0;
+    padding: 1vw;
+}
+
+.playBtn {
+    width: 40%;
+    margin: 0 auto;
+    position: relative;
+    margin: -15vw auto 0;
+}
+
+.column3 {
+    display: grid;
+    grid-template-columns: 33.33% 33.33% 33.33%;
+    width: 50vw;
+    margin: 0 auto;
+}
+
+.col1,
+.col2,
+.col3 {
+    background-color: black;
+    border-radius: 50%;
+    height: 10vw;
+    width: 10vw;
+    text-align: center;
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+}
+
+.col1 button,
+.col2 button,
+.col3 button {
+    padding: 3vw;
+    color: white;
+    font-size: 4vw;
+}
+
+.active {
+    background-color: #760303;
+}
+
+.column2 {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    width: 95vw;
+    margin: 0 auto;
+    margin-top: -8vw;
+}
+
+.total-chance,
+.total-runs {
+    background-color: #020253;
+    border-radius: 23vw;
+    border: 1px solid white;
+    font-size: 4vw;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    padding: 2vw;
+    margin: 1vw;
+}
+
+.chance-icon {
+    position: relative;
+    width: 12vw;
+    top: 4vw;
+    z-index: 2;
+}
+
+.gift-title {
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 2vw;
+}
+
+.column4 {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+}
+
+.gift-col1,
+.gift-col2,
+.gift-col3,
+.gift-col4 {
+    background-image: url(../img/gift.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    color: white;
+    font-size: 3vw;
+    text-align: center;
+    font-weight: bold;
+    padding: 2vw;
+}
+
+
+.gift {
+    padding: 0 2vw 5vw;
+}
+
+.reward {
+    background-image: url(../img/rewBg.png);
+    margin-top: 2vw;
+}
+
+.how-to-play {
+    width: 60vw;
+    margin: 0 auto;
+    padding: 2vw 0;
+}
+
+.talent-reward-tab,
+.user-reward-tab {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    width: 70vw;
+    margin: 0 auto;
+}
+
+
+.talent-leaderboard-tab,
+.user-leaderboard-tab {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    width: 90vw;
+    margin: 0 auto;
+    padding: 15vw 0 0;
+}
+
+.talent-leaderboard-tab button,
+.user-leaderboard-tab button {
+    padding: 2vw;
+}
+
+.selected-tab {
+    background-image: url(../img/selectRew.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    text-align: center;
+    padding: 2vw;
+
+}
+
+.unselected-tab {
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    text-align: center;
+    padding: 2vw;
+}
+
+.unselected-tab-right-side {
+    background-image: url(../img/rightSel.png);
+}
+
+.unselected-tab-left-side {
+    background-image: url(../img/leftSel.png);
+}
+
+.unselected-tab button {
+    color: white;
+    font-weight: bold;
+    font-size: 3.5vw;
+}
+
+.selected-tab button {
+    color: black;
+    font-weight: bold;
+    font-size: 3.5vw;
+}
+
+.rewards {
+    display: grid;
+    grid-template-columns: 10% auto 10%;
+    width: 85vw;
+    margin: 0 auto;
+    align-items: center;
+}
+
+#reward-description {
+    color: white;
+    font-size: 3vw;
+    font-weight: bold;
+    text-align: center;
+    padding: 2vw 0 10vw;
+    width: 50vw;
+    margin: 0 auto;
+}
+
+#slide-number {
+    font-size: 4vw;
+    font-weight: bold;
+    width: 5vw;
+    color: white;
+    background: #7d0505;
+    padding: 2vw;
+    border-radius: 50%;
+    border-style: dashed;
+    text-align: center;
+    margin: 5vw auto;
+}
+
+.leaderboard {
+    background-image: url(../img/Leaderboard-bg.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    padding-bottom: 5vw;
+}
+
+.top3winner {
+    display: grid;
+    grid-template-columns: 33.33% 33.33% 33.33%;
+    text-align: center;
+    background-image: url(../img/rankingBg.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 90vw;
+    margin: 0 auto;
+    margin-top: 5vw;
+}
+
+.top2,
+.top3 {
+    font-size: 3.5vw;
+    font-weight: bold;
+    padding: 8vw 0 2vw;
+}
+
+.top3 {
+    padding: 12vw 0 2vw;
+}
+
+.top1 {
+    font-size: 3.5vw;
+    font-weight: bold;
+    padding: 5vw 0 2vw;
+}
+
+.winner-img {
+    position: relative;
+    margin-top: -35vw;
+    border-radius: 50%;
+    width: 14vw;
+    padding: 6vw;
+}
+
+.leaderboard-strip {
+    background-color: white;
+    border-radius: 5vw;
+    display: grid;
+    grid-template-columns: 10% auto 30%;
+    width: 92vw;
+    margin: 0 auto;
+    margin-bottom: 2vw;
+    column-gap: 2vw;
+    font-weight: bold;
+    align-items: center;
+    font-size: 4vw;
+}
+
+.profile-img {
+    border: 1px solid black;
+    border-radius: 50%;
+}
+
+.profile-img img {
+    border-radius: 50%;
+    position: relative;
+    top: 0.5vw;
+}
+
+.top-leaderboard-strip {
+    margin-top: 5vw;
+}
+
+.last-col {
+    background-color: #760303;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    border-radius: 0 5vw 5vw 0;
+    padding-right: 1vw;
+    color: white;
+}
+
+.more-btn {
+    width: 20%;
+    margin: 0 auto;
+    padding: 2vw 5vw;
+}
+
+.footer {
+    color: #b6acac;
+    font-weight: bold;
+    font-size: 4vw;
+    text-align: center;
+    padding-bottom: 5vw;
+}

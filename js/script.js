@@ -54,12 +54,79 @@ const userCricketMasterRewardImg = {
     2: './img/Dragon-entrance-effect.png'
 }
 
+document.getElementById('hindi-guidline').style.display = 'none';
 document.getElementById('talent-reward').style.display = 'none';
 document.getElementById('talent-winner').style.display = 'none';
 document.getElementById('talent-leaderboard').style.display = 'none';
 document.getElementById('talent-game').style.display = 'none';
 document.getElementById('cricket-user-winner').style.display = 'none';
 document.getElementById('modal').style.display = 'none';
+for (let i = 0; i < 3; i++) {
+    document.getElementsByClassName('w7-9')[i].style.display = 'none';
+}
+document.getElementById('less-btn').style.display = 'none';
+
+
+function showWinnerlist() {
+    for (let i = 0; i < 3; i++) {
+        document.getElementsByClassName('w7-9')[i].style.display = 'block';
+    }
+    document.getElementById('less-btn').style.display = 'block';
+    document.getElementById('more-btn').style.display = 'none';
+}
+function hideWinnerlist() {
+    for (let i = 0; i < 3; i++) {
+        document.getElementsByClassName('w7-9')[i].style.display = 'none';
+    }
+    document.getElementById('more-btn').style.display = 'block';
+    document.getElementById('less-btn').style.display = 'none';
+}
+
+setTimer();
+const interval = setInterval(setTimer, 1000);
+
+function setTimer() {
+    const date = new Date(2023, 00, 10);
+    const currentDate = new Date();
+
+    var totaltime = Math.abs(date - currentDate) / 1000;
+
+    var days = Math.floor(totaltime / 86400);
+    totaltime -= days * 86400;
+
+    var hours = Math.floor(totaltime / 3600) % 24;
+    totaltime -= hours * 3600;
+
+    var minutes = Math.floor(totaltime / 60) % 60;
+    totaltime -= minutes * 60;
+
+    var seconds = Math.floor(totaltime % 60);
+
+    document.getElementById('days').innerHTML = days.toString().length == 1 ? `0${days}` : days;
+    document.getElementById('hr').innerHTML = hours.toString().length == 1 ? `0${hours}` : hours;
+    document.getElementById('min').innerHTML = minutes.toString().length == 1 ? `0${minutes}` : minutes;
+    document.getElementById('sec').innerHTML = seconds.toString().length == 1 ? `0${seconds}` : seconds;
+
+    if (days == 0 && hours == 0 && minutes == 0 && seconds == 0) {
+        document.getElementById('days').innerHTML = 00;
+        document.getElementById('hr').innerHTML = 00;
+        document.getElementById('min').innerHTML = 00;
+        document.getElementById('sec').innerHTML = 00;
+        clearInterval(interval);
+    }
+}
+
+function setLanguage() {
+    const val = document.getElementById('language').value;
+    if (val == 'english') {
+        document.getElementById('english-guidline').style.display = 'block';
+        document.getElementById('hindi-guidline').style.display = 'none';
+    }
+    else {
+        document.getElementById('english-guidline').style.display = 'none';
+        document.getElementById('hindi-guidline').style.display = 'block';
+    }
+}
 
 function hideGuidline() {
     document.getElementById('modal').style.display = 'none';
@@ -218,3 +285,27 @@ function onRightClick() {
         setRewards();
     }
 }
+
+// scroll to top
+
+var scrollToTopBtn = document.querySelector(".scrollToTopBtn");
+var rootElement = document.documentElement;
+
+function handleScroll() {
+    var scrollTotal = rootElement.scrollHeight - rootElement.clientHeight;
+    if (rootElement.scrollTop / scrollTotal > 0.1) {
+        scrollToTopBtn.classList.add("showBtn");
+    } else {
+        scrollToTopBtn.classList.remove("showBtn");
+    }
+}
+
+function scrollToTop() {
+    rootElement.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+
+scrollToTopBtn.addEventListener("click", scrollToTop);
+document.addEventListener("scroll", handleScroll);

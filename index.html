@@ -49,7 +49,7 @@
                         </tbody>
                     </table>
                     <br />
-                    <ul>
+                    <ul id="english-guidline">
                         <li>To start playing, send event gifts to your favorite streamers.
                         </li>
                         <li>To play one over <b>(06 balls)</b>, spend 50k beans on event gifts.(1 over = 50k beans)</li>
@@ -65,11 +65,34 @@
                             collected in the gems pot and will be sent as rewards to top 5 talents of daily ranking.
                             Gems pot will reset to 0 after distribution.</li>
                     </ul>
+                    <ul id="hindi-guidline">
+                        <li>Cricket ka khel shuru karne ke liye, event gifts bhejhe.
+                        </li>
+                        <li>Ek over (06 balls) paane ke liye, 50k beans event gifts par kharch kare. (1 over = 50k
+                            beans)</li>
+                        <li>Play button par click karke maximum runs score kare.</li>
+                        <li>Harr baar jab aap runs score karte ho toh uske hisaab se aapko beans reward milega.</li>
+                        <li>Event gifts bhejh kar bahot saare overs jama kare aur x20 aur x50 overs ek baar me khele aur
+                            ek sath runs score kare. </li>
+                        <li>Event gifts par kharch kiye gaye beans ko Gems Pot me jama kiya jaayega aur Daily
+                            leaderboard ke top 5 talents ko reward diya jaayega. Distribution ke baad, Gems Pot ko 0 par
+                            reset kar diya jaayega.</li>
+                        <li>Users jo game khel ke sabse zyaada runs score karte hai woh users Master Blaster leaderboard
+                            par rank karenge aur Users jo sabse zyaada event gifts bhejhte hai woh Cricket Masters ke
+                            leaderboard par rank karenge.</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </div>
     <div id="main">
+        <!-- change language -->
+        <div>
+            <select id="language" onchange="setLanguage()">
+                <option value="english">English</option>
+                <option value="hindi">Hindi</option>
+            </select>
+        </div>
         <!-- header -->
         <div class="header">
             <img src="./img/header.png" alt="header" width="100%">
@@ -78,16 +101,16 @@
         <!-- timer -->
         <div class="timer">
             <div>
-                <div class="days">00</div>Days
+                <div class="days" id="days">00</div>Days
             </div>
             <div>
-                <div class="hr">00</div>Hr
+                <div class="hr" id="hr">00</div>Hr
             </div>
             <div>
-                <div class="min">00</div>Min
+                <div class="min" id="min">00</div>Min
             </div>
             <div>
-                <div class="sec">00</div>Sec
+                <div class="sec" id="sec">00</div>Sec
             </div>
         </div>
 
@@ -299,8 +322,52 @@
                             <img src="http://www.streamkar.tv/streamkar/common/img/ulv/13.png" style="width: 10vw;">
                         </div>
                     </div>
-                    <div>
+                    <div class="w4-6">
                         <div class="leaderboard-strip top-leaderboard-strip">
+                            <div class="profile-img">
+                                <img src="http://kkimg.kktv9.com/image/555000004_0_1587365474177.jpg!128" alt=""
+                                    width="100%">
+                            </div>
+                            <div>
+                                Name:
+                                <br />
+                                Id:00000000
+                            </div>
+                            <div class="last-col">
+                                <div style="padding: 3vw;">Run Scored</div>
+                            </div>
+                        </div>
+                        <div class="leaderboard-strip">
+                            <div class="profile-img">
+                                <img src="http://kkimg.kktv9.com/image/555000004_0_1587365474177.jpg!128" alt=""
+                                    width="100%">
+                            </div>
+                            <div>
+                                Name:
+                                <br />
+                                Id:00000000
+                            </div>
+                            <div class="last-col">
+                                <div style="padding: 3vw;">Run Scored</div>
+                            </div>
+                        </div>
+                        <div class="leaderboard-strip">
+                            <div class="profile-img">
+                                <img src="http://kkimg.kktv9.com/image/555000004_0_1587365474177.jpg!128" alt=""
+                                    width="100%">
+                            </div>
+                            <div>
+                                Name:
+                                <br />
+                                Id:00000000
+                            </div>
+                            <div class="last-col">
+                                <div style="padding: 3vw;">Run Scored</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w7-9">
+                        <div class="leaderboard-strip">
                             <div class="profile-img">
                                 <img src="http://kkimg.kktv9.com/image/555000004_0_1587365474177.jpg!128" alt=""
                                     width="100%">
@@ -371,8 +438,52 @@
                             <img src="http://www.streamkar.tv/streamkar/common/img/ulv/13.png" style="width: 10vw;">
                         </div>
                     </div>
-                    <div>
+                    <div class="w4-6">
                         <div class="leaderboard-strip top-leaderboard-strip">
+                            <div class="profile-img">
+                                <img src="http://kkimg.kktv9.com/image/555000004_0_1587365474177.jpg!128" alt=""
+                                    width="100%">
+                            </div>
+                            <div>
+                                Name:
+                                <br />
+                                Id:00000000
+                            </div>
+                            <div class="last-col">
+                                <div style="padding: 3vw;">Run Scored</div>
+                            </div>
+                        </div>
+                        <div class="leaderboard-strip">
+                            <div class="profile-img">
+                                <img src="http://kkimg.kktv9.com/image/555000004_0_1587365474177.jpg!128" alt=""
+                                    width="100%">
+                            </div>
+                            <div>
+                                Name:
+                                <br />
+                                Id:00000000
+                            </div>
+                            <div class="last-col">
+                                <div style="padding: 3vw;">Run Scored</div>
+                            </div>
+                        </div>
+                        <div class="leaderboard-strip">
+                            <div class="profile-img">
+                                <img src="http://kkimg.kktv9.com/image/555000004_0_1587365474177.jpg!128" alt=""
+                                    width="100%">
+                            </div>
+                            <div>
+                                Name:
+                                <br />
+                                Id:00000000
+                            </div>
+                            <div class="last-col">
+                                <div style="padding: 3vw;">Run Scored</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w7-9">
+                        <div class="leaderboard-strip">
                             <div class="profile-img">
                                 <img src="http://kkimg.kktv9.com/image/555000004_0_1587365474177.jpg!128" alt=""
                                     width="100%">
@@ -445,8 +556,52 @@
                             <img src="http://www.streamkar.tv/streamkar/common/img/ulv/13.png" style="width: 10vw;">
                         </div>
                     </div>
-                    <div>
+                    <div class="w4-6">
                         <div class="leaderboard-strip top-leaderboard-strip">
+                            <div class="profile-img">
+                                <img src="http://kkimg.kktv9.com/image/555000004_0_1587365474177.jpg!128" alt=""
+                                    width="100%">
+                            </div>
+                            <div>
+                                Name:
+                                <br />
+                                Id:00000000
+                            </div>
+                            <div class="last-col">
+                                <div style="padding: 3vw;">Run Scored</div>
+                            </div>
+                        </div>
+                        <div class="leaderboard-strip">
+                            <div class="profile-img">
+                                <img src="http://kkimg.kktv9.com/image/555000004_0_1587365474177.jpg!128" alt=""
+                                    width="100%">
+                            </div>
+                            <div>
+                                Name:
+                                <br />
+                                Id:00000000
+                            </div>
+                            <div class="last-col">
+                                <div style="padding: 3vw;">Run Scored</div>
+                            </div>
+                        </div>
+                        <div class="leaderboard-strip">
+                            <div class="profile-img">
+                                <img src="http://kkimg.kktv9.com/image/555000004_0_1587365474177.jpg!128" alt=""
+                                    width="100%">
+                            </div>
+                            <div>
+                                Name:
+                                <br />
+                                Id:00000000
+                            </div>
+                            <div class="last-col">
+                                <div style="padding: 3vw;">Run Scored</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w7-9">
+                        <div class="leaderboard-strip">
                             <div class="profile-img">
                                 <img src="http://kkimg.kktv9.com/image/555000004_0_1587365474177.jpg!128" alt=""
                                     width="100%">
@@ -517,8 +672,52 @@
                             <img src="http://www.streamkar.tv/streamkar/common/img/ulv/13.png" style="width: 10vw;">
                         </div>
                     </div>
-                    <div>
+                    <div class="w4-6">
                         <div class="leaderboard-strip top-leaderboard-strip">
+                            <div class="profile-img">
+                                <img src="http://kkimg.kktv9.com/image/555000004_0_1587365474177.jpg!128" alt=""
+                                    width="100%">
+                            </div>
+                            <div>
+                                Name:
+                                <br />
+                                Id:00000000
+                            </div>
+                            <div class="last-col">
+                                <div style="padding: 3vw;">Run Scored</div>
+                            </div>
+                        </div>
+                        <div class="leaderboard-strip">
+                            <div class="profile-img">
+                                <img src="http://kkimg.kktv9.com/image/555000004_0_1587365474177.jpg!128" alt=""
+                                    width="100%">
+                            </div>
+                            <div>
+                                Name:
+                                <br />
+                                Id:00000000
+                            </div>
+                            <div class="last-col">
+                                <div style="padding: 3vw;">Run Scored</div>
+                            </div>
+                        </div>
+                        <div class="leaderboard-strip">
+                            <div class="profile-img">
+                                <img src="http://kkimg.kktv9.com/image/555000004_0_1587365474177.jpg!128" alt=""
+                                    width="100%">
+                            </div>
+                            <div>
+                                Name:
+                                <br />
+                                Id:00000000
+                            </div>
+                            <div class="last-col">
+                                <div style="padding: 3vw;">Run Scored</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w7-9">
+                        <div class="leaderboard-strip">
                             <div class="profile-img">
                                 <img src="http://kkimg.kktv9.com/image/555000004_0_1587365474177.jpg!128" alt=""
                                     width="100%">
@@ -565,10 +764,20 @@
             </div>
         </div>
 
-        <div class="more-btn">
-            <img src="./img/More-btn.png" alt="" width="100%">
+        <div id="more-btn">
+            <button onclick="showWinnerlist()">
+                <img src="./img/More-btn.png" alt="" width="100%">
+            </button>
         </div>
 
+        <div id="less-btn">
+            <button onclick="hideWinnerlist()">
+                <img src="./img/less-btn.png" alt="" width="100%">
+            </button>
+        </div>
+        <div id="go-to-top" class="scrollToTopBtn">
+            <button>^</button>
+        </div>
         <!-- footer -->
         <div class="footer">All rights Reserved by StreamKar</div>
     </div>

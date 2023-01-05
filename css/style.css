@@ -13,6 +13,15 @@ body {
     width: 100vw;
 }
 
+#language {
+    width: 100%;
+    background: #000117 !important;
+    color: white;
+    border: none !important;
+    outline: none;
+    height: 7vw;
+}
+
 .guidline {
     position: fixed;
     top: 0;
@@ -57,6 +66,8 @@ body {
     height: 70vh;
     overflow: scroll;
     margin: 0 auto;
+    padding-left: 10vw;
+    padding-right: 5vw;
 }
 
 #score-beans-table {
@@ -490,7 +501,8 @@ button {
     color: white;
 }
 
-.more-btn {
+#more-btn,
+#less-btn {
     width: 20%;
     margin: 0 auto;
     padding: 2vw 5vw;
@@ -502,4 +514,35 @@ button {
     font-size: 4vw;
     text-align: center;
     padding-bottom: 5vw;
+}
+
+#go-to-top {
+    position: fixed;
+    bottom: 5vw;
+    background: #760303;
+    float: right;
+    right: 2vw;
+    height: 10vw;
+    width: 10vw;
+    text-align: center;
+    padding: 1vw;
+    border-radius: 4vw;
+}
+
+#go-to-top button {
+    font-size: 10vw;
+    color: white;
+    margin-top: 1vw;
+}
+
+.scrollToTopBtn {
+    cursor: pointer;
+    z-index: 3;
+    transform: translateY(100px);
+    transition: all 0.5s ease;
+}
+
+.showBtn {
+    opacity: 1;
+    transform: translateY(0);
 }

@@ -9,6 +9,14 @@ body {
     background-repeat: no-repeat;
 }
 
+.main {
+    opacity: 0.2;
+    height: 100vh;
+    position: relative;
+    top: 0;
+    overflow: hidden;
+}
+
 .header {
     width: 100vw;
 }
@@ -39,14 +47,6 @@ body {
     padding: 5vw;
 }
 
-.main {
-    opacity: 0.2;
-    height: 100vh;
-    position: relative;
-    top: 0;
-    overflow: hidden;
-}
-
 .giuidline-bg {
     background-image: url(../img/dialogBg.png);
     background-repeat: no-repeat;
@@ -70,7 +70,7 @@ body {
     padding-right: 5vw;
 }
 
-#score-beans-table {
+#game-reward-table {
     border-collapse: collapse;
     width: 50vw;
     margin: 0 auto;
@@ -78,28 +78,28 @@ body {
     text-align: center;
 }
 
-#score-beans-table td,
-#score-beans-table th {
+#game-reward-table td,
+#game-reward-table th {
     border: 1px solid #145b11;
 }
 
-#score-beans-table tr:nth-child(even) {
+#game-reward-table tr:nth-child(even) {
     background-color: #eee;
     color: #145b11;
 }
 
-#score-beans-table tr:nth-child(odd) {
+#game-reward-table tr:nth-child(odd) {
     background-color: #145b11;
 }
 
-#score-beans-table th {
+#game-reward-table th {
     text-align: left;
     background-color: #145b11;
     color: white;
     text-align: center;
 }
 
-.game-reward-title {
+.reward-title {
     text-align: center;
     font-size: 5vw;
     margin-bottom: 2vw;
@@ -108,7 +108,7 @@ body {
     text-decoration: underline;
 }
 
-.games-pot {
+.gems-pot {
     width: 80vw;
     margin: 0 auto;
 }
@@ -286,7 +286,7 @@ button {
     z-index: 2;
 }
 
-.gift-title {
+.title {
     width: 80%;
     margin: 0 auto;
     margin-bottom: 2vw;

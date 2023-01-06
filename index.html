@@ -13,18 +13,18 @@
 <body>
     <div id="modal" class="modal">
         <div class="guidline">
-            <div class="close close-btn">
+            <div class="close">
                 <button onclick={hideGuidline()}>
-                    <img src="./img/close.png" alt="car" style="width: 10vw;" />
+                    <img src="./img/close.png" alt="closeBtn" style="width: 10vw;" />
                 </button>
             </div>
             <div class="giuidline-bg">
-                <div class="gift-title">
-                    <img src="./img/howTorib.png" alt="gift title" width="100%">
+                <div class="title">
+                    <img src="./img/howTorib.png" alt="title" width="100%">
                 </div>
                 <div class="rules">
-                    <div class="game-reward-title">Game Rewards</div>
-                    <table id="score-beans-table">
+                    <div class="reward-title">Game Rewards</div>
+                    <table id="game-reward-table">
                         <tbody>
                             <tr>
                                 <th>Score</th>
@@ -32,19 +32,19 @@
                             </tr>
                             <tr>
                                 <td>6-20</td>
-                                <td><img src="./img/coin.png" alt="" style="width: 3vw;">250</td>
+                                <td><img src="./img/coin.png" alt="coin" style="width: 3vw;">250</td>
                             </tr>
                             <tr>
                                 <td>21-25</td>
-                                <td><img src="./img/coin.png" alt="" style="width: 3vw;">500</td>
+                                <td><img src="./img/coin.png" alt="coin" style="width: 3vw;">500</td>
                             </tr>
                             <tr>
                                 <td>26-30</td>
-                                <td><img src="./img/coin.png" alt="" style="width: 3vw;">1000</td>
+                                <td><img src="./img/coin.png" alt="coin" style="width: 3vw;">1000</td>
                             </tr>
                             <tr>
                                 <td>31-36</td>
-                                <td><img src="./img/coin.png" alt="" style="width: 3vw;">1500</td>
+                                <td><img src="./img/coin.png" alt="coin" style="width: 3vw;">1500</td>
                             </tr>
                         </tbody>
                     </table>
@@ -101,42 +101,43 @@
         <!-- timer -->
         <div class="timer">
             <div>
-                <div class="days" id="days">00</div>Days
+                <div class="days" id="days">00</div>
+                <div>Days</div>
             </div>
             <div>
-                <div class="hr" id="hr">00</div>Hr
+                <div class="hr" id="hr">00</div>
+                <div>Hr</div>
             </div>
             <div>
-                <div class="min" id="min">00</div>Min
+                <div class="min" id="min">00</div>
+                <div>Min</div>
             </div>
             <div>
-                <div class="sec" id="sec">00</div>Sec
+                <div class="sec" id="sec">00</div>
+                <div>Sec</div>
             </div>
         </div>
 
         <!-- game banner -->
         <!-- user talent tab for game banner -->
-        <div class="user-talent-tab" style="margin-top: 10vw;">
+        <div class="user-talent-tab">
             <div class="user-talent">
-                <button class="user" id="game-user-mode" onclick="setUserMode('game')">
-                    User
-                </button>
+                <button class="user" id="game-user-mode" onclick="setUserMode('game')">User</button>
                 <div></div>
-                <button class="talent unselected-mode" id="game-talent-mode" onclick="setTalentMode('game')">
-                    Talent
-                </button>
+                <button class="talent unselected-mode" id="game-talent-mode"
+                    onclick="setTalentMode('game')">Talent</button>
             </div>
         </div>
         <div id="user-game">
             <!-- game section -->
             <div class="game">
                 <div class="mainimg">
-                    <img src="./img/main.png" alt="" width="100%">
+                    <img src="./img/main.png" alt="gameImg" width="100%">
                 </div>
                 <div class="gamebgimg">
-                    <img src="./img/gameBg.png" alt="" width="100%">
+                    <img src="./img/gameBg.png" alt="gamebg" width="100%">
                     <div class="playBtn">
-                        <img src="./img/play.png" alt="" width="100%">
+                        <img src="./img/play.png" alt="play" width="100%">
                     </div>
                 </div>
                 <div class="column3">
@@ -164,7 +165,7 @@
         <div id="talent-game">
             <div class="game">
                 <div>
-                    <div class="games-pot">
+                    <div class="gems-pot">
                         <br /><br />
                         <img src="./img/gems-pot.png" alt="" width="100%">
                     </div>
@@ -180,7 +181,7 @@
 
         <!-- gift banner -->
         <div class="game gift">
-            <div class="gift-title">
+            <div class="title">
                 <img src="./img/giftEvent.png" alt="gift title" width="100%">
             </div>
             <div class="column4">
@@ -218,46 +219,43 @@
         <!-- user talent tab for reward -->
         <div class="user-talent-tab" style="margin-top: 0;">
             <div class="user-talent">
-                <button class="user" id="reward-user-mode" onclick="setUserMode('reward')">
-                    User
-                </button>
+                <button class="user" id="reward-user-mode" onclick="setUserMode('reward')">User</button>
                 <div></div>
                 <button class="talent unselected-mode" id="reward-talent-mode" onclick="setTalentMode('reward')">
-                    Talent
-                </button>
+                    Talent</button>
             </div>
         </div>
         <div class="game reward">
-            <div class="gift-title">
+            <div class="title">
                 <img src="./img/rewards.png" alt="gift title" width="100%">
             </div>
             <div id="user-reward">
-                <div class="talent-reward-tab">
-                    <div id="reward-master-blaster" class="selected-tab"><button
-                            onclick="setMasterBlaster('reward')">Master Blaster</button></div>
-                    <div id="reward-cricket-master" class="unselected-tab unselected-tab-right-side"><button
-                            onclick="setCricketMaster('reward')">Cricket Master</button></div>
+                <div class="user-reward-tab">
+                    <div id="reward-master-blaster" class="selected-tab">
+                        <button onclick="setMasterBlaster('reward')">Master Blaster</button>
+                    </div>
+                    <div id="reward-cricket-master" class="unselected-tab unselected-tab-right-side">
+                        <button onclick="setCricketMaster('reward')">Cricket Master</button>
+                    </div>
                 </div>
             </div>
             <div id="talent-reward">
-                <div class="user-reward-tab">
-                    <div id="overall-reward" class="selected-tab"><button
-                            onclick="setOverallReward('reward')">Overall</button></div>
-                    <div id="daily-reward" class="unselected-tab unselected-tab-right-side"><button
-                            onclick="setDailyReward('reward')">Daily</button></div>
+                <div class="talent-reward-tab">
+                    <div id="overall-reward" class="selected-tab">
+                        <button onclick="setOverallReward('reward')">Overall</button>
+                    </div>
+                    <div id="daily-reward" class="unselected-tab unselected-tab-right-side">
+                        <button onclick="setDailyReward('reward')">Daily</button>
+                    </div>
                 </div>
             </div>
             <div id="slide-number">1st</div>
             <div class="rewards">
-                <div>
-                    <button onclick="onLeftClick()"> <img src="./img/lArrow.png" alt="" width="100%"> </button>
-                </div>
+                <button onclick="onLeftClick()"> <img src="./img/lArrow.png" alt="" width="100%"> </button>
                 <div style=" margin: 0 15vw 0;">
                     <img src="./img/Master-blaster-gold-profile-frame.png" alt="" width="100%" id="reward-img">
                 </div>
-                <div>
-                    <button onclick="onRightClick()"> <img src="./img/rArrow.png" alt="" width="100%"> </button>
-                </div>
+                <button onclick="onRightClick()"> <img src="./img/rArrow.png" alt="" width="100%"> </button>
             </div>
             <div id="reward-description">
                 15*Days Master Blaster Gold Profile Frame (Golden)
@@ -267,31 +265,31 @@
         <!-- user talent tab for leaderboard-->
         <div class="user-talent-tab" style="margin-top: 0;">
             <div class="user-talent">
-                <button class="user" id="leaderboard-user-mode" onclick="setUserMode('leaderboard')">
-                    User
-                </button>
+                <button class="user" id="leaderboard-user-mode" onclick="setUserMode('leaderboard')">User</button>
                 <div></div>
                 <button class="talent unselected-mode" id="leaderboard-talent-mode"
-                    onclick="setTalentMode('leaderboard')">
-                    Talent
-                </button>
+                    onclick="setTalentMode('leaderboard')">Talent</button>
             </div>
         </div>
         <div class="leaderboard">
             <div id="user-leaderboard">
                 <div class="user-leaderboard-tab">
-                    <div id="leaderboard-master-blaster" class="selected-tab"><button
-                            onclick="setMasterBlaster('leaderboard')">Master Blaster</button></div>
-                    <div id="leaderboard-cricket-master" class="unselected-tab unselected-tab-right-side"><button
-                            onclick="setCricketMaster('leaderboard')">Cricket Master</button></div>
+                    <div id="leaderboard-master-blaster" class="selected-tab">
+                        <button onclick="setMasterBlaster('leaderboard')">Master Blaster</button>
+                    </div>
+                    <div id="leaderboard-cricket-master" class="unselected-tab unselected-tab-right-side">
+                        <button onclick="setCricketMaster('leaderboard')">Cricket Master</button>
+                    </div>
                 </div>
             </div>
             <div id="talent-leaderboard">
                 <div class="talent-leaderboard-tab">
-                    <div id="overall-leaderboard" class="selected-tab"><button
-                            onclick="setOverallReward('leaderboard')">Overall</button></div>
-                    <div id="daily-leaderboard" class="unselected-tab unselected-tab-right-side"><button
-                            onclick="setDailyReward('leaderboard')">Daily</button></div>
+                    <div id="overall-leaderboard" class="selected-tab">
+                        <button onclick="setOverallReward('leaderboard')">Overall</button>
+                    </div>
+                    <div id="daily-leaderboard" class="unselected-tab unselected-tab-right-side">
+                        <button onclick="setDailyReward('leaderboard')">Daily</button>
+                    </div>
                 </div>
             </div>
             <div id="user-winner">
@@ -329,9 +327,7 @@
                                     width="100%">
                             </div>
                             <div>
-                                Name:
-                                <br />
-                                Id:00000000
+                                Name:<br />Id:00000000
                             </div>
                             <div class="last-col">
                                 <div style="padding: 3vw;">Run Scored</div>
@@ -343,9 +339,7 @@
                                     width="100%">
                             </div>
                             <div>
-                                Name:
-                                <br />
-                                Id:00000000
+                                Name:<br />Id:00000000
                             </div>
                             <div class="last-col">
                                 <div style="padding: 3vw;">Run Scored</div>
@@ -357,9 +351,7 @@
                                     width="100%">
                             </div>
                             <div>
-                                Name:
-                                <br />
-                                Id:00000000
+                                Name:<br />Id:00000000
                             </div>
                             <div class="last-col">
                                 <div style="padding: 3vw;">Run Scored</div>
@@ -373,9 +365,7 @@
                                     width="100%">
                             </div>
                             <div>
-                                Name:
-                                <br />
-                                Id:00000000
+                                Name:<br />Id:00000000
                             </div>
                             <div class="last-col">
                                 <div style="padding: 3vw;">Run Scored</div>
@@ -387,9 +377,7 @@
                                     width="100%">
                             </div>
                             <div>
-                                Name:
-                                <br />
-                                Id:00000000
+                                Name:<br />Id:00000000
                             </div>
                             <div class="last-col">
                                 <div style="padding: 3vw;">Run Scored</div>
@@ -401,9 +389,7 @@
                                     width="100%">
                             </div>
                             <div>
-                                Name:
-                                <br />
-                                Id:00000000
+                                Name:<br />Id:00000000
                             </div>
                             <div class="last-col">
                                 <div style="padding: 3vw;">Run Scored</div>
@@ -445,9 +431,7 @@
                                     width="100%">
                             </div>
                             <div>
-                                Name:
-                                <br />
-                                Id:00000000
+                                Name:<br />Id:00000000
                             </div>
                             <div class="last-col">
                                 <div style="padding: 3vw;">Run Scored</div>
@@ -459,9 +443,7 @@
                                     width="100%">
                             </div>
                             <div>
-                                Name:
-                                <br />
-                                Id:00000000
+                                Name:<br />Id:00000000
                             </div>
                             <div class="last-col">
                                 <div style="padding: 3vw;">Run Scored</div>
@@ -473,9 +455,7 @@
                                     width="100%">
                             </div>
                             <div>
-                                Name:
-                                <br />
-                                Id:00000000
+                                Name:<br />Id:00000000
                             </div>
                             <div class="last-col">
                                 <div style="padding: 3vw;">Run Scored</div>
@@ -489,9 +469,7 @@
                                     width="100%">
                             </div>
                             <div>
-                                Name:
-                                <br />
-                                Id:00000000
+                                Name:<br />Id:00000000
                             </div>
                             <div class="last-col">
                                 <div style="padding: 3vw;">Run Scored</div>
@@ -503,9 +481,7 @@
                                     width="100%">
                             </div>
                             <div>
-                                Name:
-                                <br />
-                                Id:00000000
+                                Name:<br />Id:00000000
                             </div>
                             <div class="last-col">
                                 <div style="padding: 3vw;">Run Scored</div>
@@ -517,9 +493,7 @@
                                     width="100%">
                             </div>
                             <div>
-                                Name:
-                                <br />
-                                Id:00000000
+                                Name:<br />Id:00000000
                             </div>
                             <div class="last-col">
                                 <div style="padding: 3vw;">Run Scored</div>
@@ -563,9 +537,7 @@
                                     width="100%">
                             </div>
                             <div>
-                                Name:
-                                <br />
-                                Id:00000000
+                                Name:<br />Id:00000000
                             </div>
                             <div class="last-col">
                                 <div style="padding: 3vw;">Run Scored</div>
@@ -577,9 +549,7 @@
                                     width="100%">
                             </div>
                             <div>
-                                Name:
-                                <br />
-                                Id:00000000
+                                Name:<br />Id:00000000
                             </div>
                             <div class="last-col">
                                 <div style="padding: 3vw;">Run Scored</div>
@@ -591,9 +561,7 @@
                                     width="100%">
                             </div>
                             <div>
-                                Name:
-                                <br />
-                                Id:00000000
+                                Name:<br />Id:00000000
                             </div>
                             <div class="last-col">
                                 <div style="padding: 3vw;">Run Scored</div>
@@ -607,9 +575,7 @@
                                     width="100%">
                             </div>
                             <div>
-                                Name:
-                                <br />
-                                Id:00000000
+                                Name:<br />Id:00000000
                             </div>
                             <div class="last-col">
                                 <div style="padding: 3vw;">Run Scored</div>
@@ -621,9 +587,7 @@
                                     width="100%">
                             </div>
                             <div>
-                                Name:
-                                <br />
-                                Id:00000000
+                                Name:<br />Id:00000000
                             </div>
                             <div class="last-col">
                                 <div style="padding: 3vw;">Run Scored</div>
@@ -635,9 +599,7 @@
                                     width="100%">
                             </div>
                             <div>
-                                Name:
-                                <br />
-                                Id:00000000
+                                Name:<br />Id:00000000
                             </div>
                             <div class="last-col">
                                 <div style="padding: 3vw;">Run Scored</div>
@@ -679,9 +641,7 @@
                                     width="100%">
                             </div>
                             <div>
-                                Name:
-                                <br />
-                                Id:00000000
+                                Name:<br />Id:00000000
                             </div>
                             <div class="last-col">
                                 <div style="padding: 3vw;">Run Scored</div>
@@ -693,9 +653,7 @@
                                     width="100%">
                             </div>
                             <div>
-                                Name:
-                                <br />
-                                Id:00000000
+                                Name:<br />Id:00000000
                             </div>
                             <div class="last-col">
                                 <div style="padding: 3vw;">Run Scored</div>
@@ -707,9 +665,7 @@
                                     width="100%">
                             </div>
                             <div>
-                                Name:
-                                <br />
-                                Id:00000000
+                                Name:<br />Id:00000000
                             </div>
                             <div class="last-col">
                                 <div style="padding: 3vw;">Run Scored</div>
@@ -723,9 +679,7 @@
                                     width="100%">
                             </div>
                             <div>
-                                Name:
-                                <br />
-                                Id:00000000
+                                Name:<br />Id:00000000
                             </div>
                             <div class="last-col">
                                 <div style="padding: 3vw;">Run Scored</div>
@@ -737,9 +691,7 @@
                                     width="100%">
                             </div>
                             <div>
-                                Name:
-                                <br />
-                                Id:00000000
+                                Name:<br />Id:00000000
                             </div>
                             <div class="last-col">
                                 <div style="padding: 3vw;">Run Scored</div>
@@ -751,9 +703,7 @@
                                     width="100%">
                             </div>
                             <div>
-                                Name:
-                                <br />
-                                Id:00000000
+                                Name:<br />Id:00000000
                             </div>
                             <div class="last-col">
                                 <div style="padding: 3vw;">Run Scored</div>
@@ -765,16 +715,14 @@
         </div>
 
         <div id="more-btn">
-            <a href="#less-btn"> <button onclick="showWinnerlist()">
-                    <img src="./img/More-btn.png" alt="" width="100%">
-                </button></a>
+            <a href="#less-btn">
+                <button onclick="showWinnerlist()"><img src="./img/More-btn.png" alt="" width="100%"></button>
+            </a>
         </div>
 
         <div id="less-btn">
             <a href="#more-btn">
-                <button onclick="hideWinnerlist()">
-                    <img src="./img/less-btn.png" alt="" width="100%">
-                </button>
+                <button onclick="hideWinnerlist()"> <img src="./img/less-btn.png" alt="" width="100%"></button>
             </a>
         </div>
         <div id="go-to-top" class="scrollToTopBtn">
